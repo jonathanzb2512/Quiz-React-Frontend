@@ -1,0 +1,128 @@
+{
+  "testTitle": "Certificación Fullstack Semi-Senior",
+  "levels": [
+    {
+      "level": 1,
+      "topic": "JavaScript Moderno",
+      "locked": false,
+      "exercises": [
+        {
+          "id": "js_1",
+          "type": "multiple_choice",
+          "question": "¿Cuál es la salida de `console.log(typeof [])`?",
+          "options": ["array", "object", "undefined", "list"],
+          "correctAnswer": "object"
+        },
+        {
+          "id": "js_2",
+          "type": "true_false",
+          "question": "En JS, ¿`const` permite reasignar el valor de una variable?",
+          "correctAnswer": false
+        },
+        {
+          "id": "js_3",
+          "type": "writing",
+          "question": "Explica el concepto de 'Hoisting' en JavaScript.",
+          "constraints": { "minWords": 100, "maxWords": 150 },
+          "placeholder": "Escribe tu explicación aquí..."
+        },
+        {
+          "id": "js_4",
+          "type": "audio",
+          "question": "Graba un audio explicando la diferencia entre `==` y `===`."
+        },
+        {
+          "id": "js_5",
+          "type": "drag_drop",
+          "question": "Completa la frase sobre Promises:",
+          "sentence": "Una promesa en JS puede estar en tres estados: pendiente, ______ o ______.",
+          "options": ["cumplida", "rechazada", "anulada", "esperando"],
+          "correctAnswers": ["cumplida", "rechazada"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "topic": "Node.js & Express",
+      "locked": true,
+      "exercises": [
+        {
+          "id": "node_1",
+          "type": "multiple_choice",
+          "question": "¿Qué módulo nativo de Node se usa para manejar rutas de archivos?",
+          "options": ["fs", "path", "http", "url"],
+          "correctAnswer": "path"
+        },
+        {
+          "id": "node_2",
+          "type": "true_false",
+          "question": "¿Node.js es un framework de JavaScript?",
+          "correctAnswer": false
+        },
+        {
+          "id": "node_3",
+          "type": "writing",
+          "question": "Describe cómo funciona el Event Loop de Node.js.",
+          "constraints": { "minWords": 100, "maxWords": 150 }
+        },
+        {
+          "id": "node_4",
+          "type": "audio",
+          "question": "Explica la diferencia entre `require` (CommonJS) e `import` (ES Modules)."
+        },
+        {
+          "id": "node_5",
+          "type": "drag_drop",
+          "question": "Completa el flujo de un Middleware:",
+          "sentence": "Un middleware recibe (req, res, ______) y debe ejecutarlo para continuar.",
+          "options": ["next", "send", "end", "route"],
+          "correctAnswers": ["next"]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "topic": "React.js Ecosystem",
+      "locked": true,
+      "exercises": [
+        {
+          "id": "react_1",
+          "type": "multiple_choice",
+          "question": "¿Para qué sirve el hook `useMemo`?",
+          "options": [
+            "Cambiar el DOM",
+            "Memorizar valores calculados",
+            "Ejecutar efectos",
+            "Navegar"
+          ],
+          "correctAnswer": "Memorizar valores calculados"
+        },
+        {
+          "id": "react_2",
+          "type": "true_false",
+          "question": "¿Es obligatorio que los nombres de los componentes empiecen con mayúscula?",
+          "correctAnswer": true
+        },
+        {
+          "id": "react_3",
+          "type": "writing",
+          "question": "Explica el ciclo de vida de un componente funcional usando `useEffect`.",
+          "constraints": { "minWords": 100, "maxWords": 150 }
+        },
+        {
+          "id": "react_4",
+          "type": "audio",
+          "question": "Explica qué es el 'Prop Drilling' y cómo evitarlo."
+        },
+        {
+          "id": "react_5",
+          "type": "drag_drop",
+          "question": "Completa la definición de Virtual DOM:",
+          "sentence": "React crea una copia ligera del DOM real llamada ______ para mejorar el rendimiento.",
+          "options": ["Shadow DOM", "Virtual DOM", "Light DOM", "Fast DOM"],
+          "correctAnswers": ["Virtual DOM"]
+        }
+      ]
+    }
+  ]
+}
