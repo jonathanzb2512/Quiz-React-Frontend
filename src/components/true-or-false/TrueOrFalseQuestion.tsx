@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../../styles/true-false.module.css";
+import { useTrueOrFalse } from "../../hooks/useTrueOrFalse"; // Asegúrate de que la ruta sea correcta
 
 // Imports de imágenes
 import btnTrue from "../../assets/true.png";
@@ -19,33 +20,11 @@ const TrueOrFalseQuestion: React.FC<TrueOrFalseQuestionProps> = ({
   questionText,
   onAnswer,
 }) => {
-  const correctAnswer: TrueOrFalseAnswer = "true";
+  // 1. EXTRAEMOS LA LÓGICA DEL HOOK
+  // Por ahora dejamos "true" fijo, pero luego lo traeremos del JSON
+  const { state, selected, handleAnswer } = useTrueOrFalse("true", onAnswer);
 
-  // Ahora estos ya no darán error porque importamos useState arriba
-  const [state, setState] = useState<"idle" | "correct" | "wrong" | "reset">(
-    "idle",
-  );
-  const [selected, setSelected] = useState<TrueOrFalseAnswer | null>(null);
-
-  const handleAnswer = (value: TrueOrFalseAnswer) => {
-    if (state !== "idle") return;
-    setSelected(value);
-
-    if (value === correctAnswer) {
-      setState("correct");
-    } else {
-      setState("wrong");
-    }
-
-    if (onAnswer) onAnswer(value);
-
-    setTimeout(() => setState("reset"), 1200);
-    setTimeout(() => {
-      setState("idle");
-      setSelected(null);
-    }, 2000);
-  };
-
+  // Esta función se queda aquí porque es lógica de "Vista"
   const getImage = (type: TrueOrFalseAnswer) => {
     if (state === "wrong") {
       if (type === "true") return btnTrueG;
@@ -64,25 +43,33 @@ const TrueOrFalseQuestion: React.FC<TrueOrFalseQuestionProps> = ({
       </div>
 
       <div
-        className={`${styles.optionsContainer} ${state === "reset" ? styles.exitAnimation : ""}`}
+        className={`${styles.optionsContainer} ${
+          state === "reset" ? styles.exitAnimation : ""
+        }`}
       >
         <button
           onClick={() => handleAnswer("true")}
-          className={`${styles.optionBtn} ${state === "correct" && selected === "true" ? styles.glow : ""}`}
+          className={`${styles.optionBtn} ${
+            state === "correct" && selected === "true" ? styles.glow : ""
+          }`}
         >
           <img src={getImage("true")} className={styles.btnImg} alt="True" />
         </button>
 
         <button
           onClick={() => handleAnswer("ng")}
-          className={`${styles.optionBtn} ${state === "correct" && selected === "ng" ? styles.glow : ""}`}
+          className={`${styles.optionBtn} ${
+            state === "correct" && selected === "ng" ? styles.glow : ""
+          }`}
         >
           <img src={getImage("ng")} className={styles.btnImg} alt="Not Given" />
         </button>
 
         <button
           onClick={() => handleAnswer("false")}
-          className={`${styles.optionBtn} ${state === "correct" && selected === "false" ? styles.glow : ""}`}
+          className={`${styles.optionBtn} ${
+            state === "correct" && selected === "false" ? styles.glow : ""
+          }`}
         >
           <img src={getImage("false")} className={styles.btnImg} alt="False" />
         </button>
