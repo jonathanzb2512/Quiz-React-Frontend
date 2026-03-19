@@ -5,37 +5,61 @@ import { LEVEL_THEMES } from "./constants/themes";
 import InstructionCard from "./components/common/InstructionCard";
 import QuizLayout from "./components/layout/QuizLayout";
 
-interface Exercise {
+// IMPORTACIÓN DE TUS CSS MODULES
+import appStyles from "../src/styles/app.module.css";
+import navStyles from "../src/styles/navigation-controls.module.css";
+
+// --- INTERFACES INTEGRADAS (Para evitar el error de importación) ---
+export type ExerciseType =
+  | "multiple_choice"
+  | "true_false"
+  | "writing"
+  | "audio"
+  | "drag_drop";
+
+export interface Exercise {
   id: string;
-  type: string;
+  type: ExerciseType;
   question: string;
   options?: string[];
-  correctAnswer: string | boolean;
   instruction?: string;
+  // ... puedes añadir los demás campos si los usas aquí
 }
 
-type ExerciseType = keyof typeof EXERCISE_COMPONENTS;
+export interface QuizData {
+  testTitle: string;
+  levels: {
+    level: number;
+    topic: string;
+    exercises: Exercise[];
+  }[];
+}
 
 function App() {
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const currentLevel = 1;
   const theme = LEVEL_THEMES[currentLevel];
 
-  const nivel = quizData.levels.find((l) => l.level === currentLevel);
-  const currentExercise = nivel?.exercises[exerciseIndex] as
-    | Exercise
-    | undefined;
+  // Forzamos el tipado de los datos del JSON
+  const data = quizData as unknown as QuizData;
+  const nivel = data.levels.find((l) => l.level === currentLevel);
+  const currentExercise = nivel?.exercises[exerciseIndex];
 
-  const ExerciseTag = currentExercise
-    ? EXERCISE_COMPONENTS[currentExercise.type as ExerciseType]
-    : null;
+  // Buscamos el componente. Si no existe (como writing o audio), será undefined.
+  const ExerciseTag =
+    currentExercise && currentExercise.type in EXERCISE_COMPONENTS
+      ? (EXERCISE_COMPONENTS[
+          currentExercise.type as keyof typeof EXERCISE_COMPONENTS
+        ] as React.ElementType)
+      : null;
 
-  // 1. Función para avanzar al siguiente ejercicio
+  const totalExercises = nivel?.exercises.length ?? 0;
+  const isFirst = exerciseIndex === 0;
+  const isLast = exerciseIndex === totalExercises - 1;
+
   const handleNext = () => {
     if (nivel && exerciseIndex < nivel.exercises.length - 1) {
       setExerciseIndex((prev) => prev + 1);
-    } else {
-      console.log("¡Has llegado al final del nivel!");
     }
   };
 
@@ -45,58 +69,62 @@ function App() {
 
   return (
     <div
-      className="w-screen h-screen overflow-hidden flex flex-col items-center"
+      className={appStyles.mainWrapper}
       style={{ background: theme.gradient }}
     >
-      <QuizLayout
-        title={nivel?.topic || "JavaScript"}
-        description={
-          <InstructionCard
-            text={
-              currentExercise?.instruction ||
-              (currentExercise?.type === "true_false"
-                ? "Lee la afirmación y selecciona si es verdadera o falsa"
-                : "Selecciona la opción correcta")
-            }
-            accentColor={theme.accent}
-          />
-        }
-      >
-        {currentExercise && ExerciseTag && (
-          <ExerciseTag
-            {...currentExercise}
-            questionText={currentExercise.question}
-            accentColor={theme.accent}
-            /* 2. AQUÍ ACTIVAMOS EL CAMBIO AUTOMÁTICO */
-            onAnswer={(res: unknown) => {
-              console.log("Respuesta capturada:", res);
-
-              // Esperamos 1.5 segundos para que el usuario vea si acertó
-              // y luego pasamos al siguiente ejercicio automáticamente
-              setTimeout(() => {
-                handleNext();
-              }, 1500);
-            }}
-          />
-        )}
-      </QuizLayout>
-
-      {/* Navegación manual por si quieres saltar rápido */}
-      <div className="fixed bottom-10 flex gap-6">
-        <button
-          className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md border border-white/30 disabled:opacity-30"
-          onClick={handleBack}
-          disabled={exerciseIndex === 0}
+      <div className={appStyles.contentArea}>
+        <QuizLayout
+          title={nivel?.topic || "JavaScript"}
+          description={
+            <InstructionCard
+              text={
+                currentExercise?.instruction || "Selecciona la opción correcta"
+              }
+              accentColor={theme.accent}
+            />
+          }
         >
-          ← Anterior
-        </button>
-        <button
-          className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md border border-white/30 disabled:opacity-30"
-          onClick={handleNext}
-          disabled={exerciseIndex === (nivel?.exercises.length || 0) - 1}
-        >
-          Siguiente →
-        </button>
+          {/* LÓGICA DE RENDERIZADO SEGURO */}
+          {currentExercise ? (
+            ExerciseTag ? (
+              <ExerciseTag
+                {...currentExercise}
+                questionText={currentExercise.question}
+                accentColor={theme.accent}
+                onAnswer={() => setTimeout(() => handleNext(), 1500)}
+              />
+            ) : (
+              <div
+                style={{ color: "white", textAlign: "center", padding: "40px" }}
+              >
+                <h2>Próximamente</h2>
+                <p>
+                  El ejercicio de tipo <b>{currentExercise.type}</b> aún está en
+                  desarrollo.
+                </p>
+              </div>
+            )
+          ) : null}
+        </QuizLayout>
+      </div>
+
+      <div className={navStyles.navWrapper}>
+        <div className={navStyles.navContainer}>
+          <button
+            onClick={handleBack}
+            disabled={isFirst}
+            className={navStyles.navBtn}
+          >
+            Anterior
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={isLast}
+            className={navStyles.navBtn}
+          >
+            Siguiente →
+          </button>
+        </div>
       </div>
     </div>
   );

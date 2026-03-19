@@ -1,16 +1,17 @@
+/* quiz-layout.module.css */
 .parentContainer {
   width: 100%;
-  height: 100vh;
+  max-height: auto; /* Limitamos la altura para dejar espacio a los botones */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 5vh; /* Usamos unidades de viewport para que sea proporcional */
+  overflow-y: auto; /* Solo si el contenido del ejercicio es REALMENTE largo */
+  padding: 10px;
 }
 
 .gameContent {
-  width: 90%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,13 +34,13 @@
 }
 
 .innerTitle {
-  margin: 0;
-  color: white; /* Cambiado a blanco para que resalte en el gradiente */
+  margin: 10px 0;
+  color: white;
   text-transform: uppercase;
-  font-size: 2.8rem;
+  font-size: 2.2rem; /* Un poco más pequeño para móviles */
   font-weight: 900;
-  letter-spacing: -1px;
   text-align: center;
+  line-height: 1;
 }
 .innerDescription {
   color: white;

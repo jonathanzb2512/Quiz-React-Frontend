@@ -1,0 +1,23 @@
+/* src/App.module.css */
+.mainWrapper {
+  position: fixed; /* Bloquea el contenedor a la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Evita scrolls raros del body */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contentArea {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* El scroll solo sucede AQUÍ adentro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px; /* Espacio para que los botones no tapen el contenido */
+  box-sizing: border-box;
+}

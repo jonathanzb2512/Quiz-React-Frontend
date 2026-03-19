@@ -12,6 +12,7 @@ export interface Exercise {
   options?: string[];
   sentence?: string;
   correctAnswer?: string | boolean | string[];
+  instruction?: string;
   constraints?: {
     minWords?: number;
     maxWords?: number;
