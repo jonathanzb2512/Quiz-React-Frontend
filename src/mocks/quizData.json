@@ -3,126 +3,218 @@
   "levels": [
     {
       "level": 1,
-      "topic": "JavaScript Moderno!!",
+      "topic": "JavaScript Moderno",
+      "themeColor": "#6A3F9F",
       "locked": false,
       "exercises": [
         {
           "id": "js_1",
           "type": "multiple_choice",
-          "question": "¿Cuál es la salida de `console.log(typeof [])`?",
-          "options": ["array", "object", "undefined", "list"],
-          "correctAnswer": "object"
+          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "scWj1BMRHUA", "category": "Fundamentals" },
+          "content": { "question": "¿Cuál es la salida de `typeof []`?", "options": ["array", "object", "undefined"] },
+          "correctResponse": "object"
         },
         {
           "id": "js_2",
           "type": "true_false",
-          "question": "En JS, ¿`const` permite reasignar el valor de una variable?",
-          "correctAnswer": false
+          "ui": { "template": "IMAGE_TOP", "mediaUrl": "js-logic.png", "category": "Variables" },
+          "content": { "question": "¿`const` permite reasignar valores?", "options": ["True", "False"] },
+          "correctResponse": "False"
         },
         {
           "id": "js_3",
           "type": "writing",
-          "question": "Explica el concepto de 'Hoisting' en JavaScript.",
-          "constraints": { "minWords": 100, "maxWords": 150 },
-          "placeholder": "Escribe tu explicación aquí..."
+          "ui": { "template": "TEXT_ONLY", "category": "Theory" },
+          "content": { "question": "Explica el concepto de 'Hoisting'.", "constraints": { "minWords": 20 } },
+          "correctResponse": null
         },
         {
           "id": "js_4",
           "type": "audio",
-          "question": "Graba un audio explicando la diferencia entre `==` y `===`."
+          "ui": { "template": "AUDIO_PROMPT", "category": "Speaking" },
+          "content": { "question": "Diferencia entre == y ===" },
+          "correctResponse": null
         },
         {
           "id": "js_5",
-          "type": "drag_drop",
-          "question": "Completa la frase sobre Promises:",
-          "sentence": "Una promesa en JS puede estar en tres estados: pendiente, ______ o ______.",
-          "options": ["cumplida", "rechazada", "anulada", "esperando"],
-          "correctAnswers": ["cumplida", "rechazada"]
+          "type": "multiple_choice",
+          "ui": { "template": "TEXT_ONLY", "category": "Promises" },
+          "content": { "question": "Estado inicial de una Promesa:", "options": ["Pending", "Resolved", "Rejected"] },
+          "correctResponse": "Pending"
         }
       ]
     },
     {
       "level": 2,
       "topic": "Node.js & Express",
+      "themeColor": "#2196F3",
       "locked": true,
       "exercises": [
         {
           "id": "node_1",
           "type": "multiple_choice",
-          "question": "¿Qué módulo nativo de Node se usa para manejar rutas de archivos?",
-          "options": ["fs", "path", "http", "url"],
-          "correctAnswer": "path"
+          "ui": { "template": "TEXT_ONLY", "category": "Architecture" },
+          "content": { "question": "¿Módulo para rutas de archivos?", "options": ["fs", "path", "http"] },
+          "correctResponse": "path"
         },
         {
           "id": "node_2",
           "type": "true_false",
-          "question": "¿Node.js es un framework de JavaScript?",
-          "correctAnswer": false
+          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "TlB_eWDSMt4", "category": "Basics" },
+          "content": { "question": "¿Node es un Framework?", "options": ["True", "False"] },
+          "correctResponse": "False"
         },
         {
           "id": "node_3",
           "type": "writing",
-          "question": "Describe cómo funciona el Event Loop de Node.js.",
-          "constraints": { "minWords": 100, "maxWords": 150 }
+          "ui": { "template": "TEXT_ONLY", "category": "Event Loop" },
+          "content": { "question": "Describe el Event Loop.", "constraints": { "minWords": 30 } },
+          "correctResponse": null
         },
         {
           "id": "node_4",
           "type": "audio",
-          "question": "Explica la diferencia entre `require` (CommonJS) e `import` (ES Modules)."
+          "ui": { "template": "AUDIO_PROMPT", "category": "Modules" },
+          "content": { "question": "Diferencia require e import." },
+          "correctResponse": null
         },
         {
           "id": "node_5",
-          "type": "drag_drop",
-          "question": "Completa el flujo de un Middleware:",
-          "sentence": "Un middleware recibe (req, res, ______) y debe ejecutarlo para continuar.",
-          "options": ["next", "send", "end", "route"],
-          "correctAnswers": ["next"]
+          "type": "multiple_choice",
+          "ui": { "template": "IMAGE_TOP", "mediaUrl": "middleware.png", "category": "Middleware" },
+          "content": { "question": "¿Función para seguir el flujo?", "options": ["next", "done", "send"] },
+          "correctResponse": "next"
         }
       ]
     },
     {
       "level": 3,
       "topic": "React.js Ecosystem",
+      "themeColor": "#00D8FF",
       "locked": true,
       "exercises": [
         {
-          "id": "react_1",
+          "id": "re_1",
           "type": "multiple_choice",
-          "question": "¿Para qué sirve el hook `useMemo`?",
-          "options": [
-            "Cambiar el DOM",
-            "Memorizar valores calculados",
-            "Ejecutar efectos",
-            "Navegar"
-          ],
-          "correctAnswer": "Memorizar valores calculados"
+          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "hQAHSlTtcmY", "category": "Hooks" },
+          "content": { "question": "¿Para qué sirve useMemo?", "options": ["DOM", "Memorizar", "Efectos"] },
+          "correctResponse": "Memorizar"
         },
         {
-          "id": "react_2",
+          "id": "re_2",
           "type": "true_false",
-          "question": "¿Es obligatorio que los nombres de los componentes empiecen con mayúscula?",
-          "correctAnswer": true
+          "ui": { "template": "TEXT_ONLY", "category": "JSX" },
+          "content": { "question": "¿Componentes en Mayúsculas?", "options": ["True", "False"] },
+          "correctResponse": "True"
         },
         {
-          "id": "react_3",
+          "id": "re_3",
           "type": "writing",
-          "question": "Explica el ciclo de vida de un componente funcional usando `useEffect`.",
-          "constraints": { "minWords": 100, "maxWords": 150 }
+          "ui": { "template": "IMAGE_TOP", "mediaUrl": "lifecycle.png", "category": "Logic" },
+          "content": { "question": "Explica useEffect." },
+          "correctResponse": null
         },
         {
-          "id": "react_4",
+          "id": "re_4",
           "type": "audio",
-          "question": "Explica qué es el 'Prop Drilling' y cómo evitarlo."
+          "ui": { "template": "AUDIO_PROMPT", "category": "State" },
+          "content": { "question": "¿Qué es Prop Drilling?" },
+          "correctResponse": null
         },
         {
-          "id": "react_5",
-          "type": "drag_drop",
-          "question": "Completa la definición de Virtual DOM:",
-          "sentence": "React crea una copia ligera del DOM real llamada ______ para mejorar el rendimiento.",
-          "options": ["Shadow DOM", "Virtual DOM", "Light DOM", "Fast DOM"],
-          "correctAnswers": ["Virtual DOM"]
+          "id": "re_5",
+          "type": "multiple_choice",
+          "ui": { "template": "TEXT_ONLY", "category": "Virtual DOM" },
+          "content": { "question": "¿React usa Virtual DOM?", "options": ["Sí", "No"] },
+          "correctResponse": "Sí"
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "topic": "Databases & SQL",
+      "themeColor": "#4CAF50",
+      "locked": true,
+      "exercises": [
+        {
+          "id": "db_1",
+          "type": "multiple_choice",
+          "ui": { "template": "TEXT_ONLY", "category": "Queries" },
+          "content": { "question": "¿Comando para leer datos?", "options": ["SELECT", "GET", "READ"] },
+          "correctResponse": "SELECT"
+        },
+        {
+          "id": "db_2",
+          "type": "true_false",
+          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "W2Z766_66Fw", "category": "Modeling" },
+          "content": { "question": "¿PK puede ser NULL?", "options": ["True", "False"] },
+          "correctResponse": "False"
+        },
+        {
+          "id": "db_3",
+          "type": "writing",
+          "ui": { "template": "IMAGE_TOP", "mediaUrl": "sql-nosql.png", "category": "Theory" },
+          "content": { "question": "SQL vs NoSQL." },
+          "correctResponse": null
+        },
+        {
+          "id": "db_4",
+          "type": "audio",
+          "ui": { "template": "AUDIO_PROMPT", "category": "ACID" },
+          "content": { "question": "Define Atomicidad." },
+          "correctResponse": null
+        },
+        {
+          "id": "db_5",
+          "type": "multiple_choice",
+          "ui": { "template": "TEXT_ONLY", "category": "Relationships" },
+          "content": { "question": "¿Qué une tablas?", "options": ["JOIN", "LINK", "CONNECT"] },
+          "correctResponse": "JOIN"
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "topic": "Testing & Deploy",
+      "themeColor": "#FF5722",
+      "locked": true,
+      "exercises": [
+        {
+          "id": "t_1",
+          "type": "multiple_choice",
+          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "7fXm_u7p9Fw", "category": "Jest" },
+          "content": { "question": "¿Qué es un Unit Test?", "options": ["Prueba mínima", "Prueba total"] },
+          "correctResponse": "Prueba mínima"
+        },
+        {
+          "id": "t_2",
+          "type": "true_false",
+          "ui": { "template": "TEXT_ONLY", "category": "TDD" },
+          "content": { "question": "¿Test primero?", "options": ["True", "False"] },
+          "correctResponse": "True"
+        },
+        {
+          "id": "t_3",
+          "type": "writing",
+          "ui": { "template": "IMAGE_TOP", "mediaUrl": "docker.png", "category": "DevOps" },
+          "content": { "question": "¿Qué es Docker?" },
+          "correctResponse": null
+        },
+        {
+          "id": "t_4",
+          "type": "audio",
+          "ui": { "template": "AUDIO_PROMPT", "category": "CI/CD" },
+          "content": { "question": "Define CI/CD." },
+          "correctResponse": null
+        },
+        {
+          "id": "t_5",
+          "type": "multiple_choice",
+          "ui": { "template": "TEXT_ONLY", "category": "Cloud" },
+          "content": { "question": "¿AWS es Cloud?", "options": ["Sí", "No"] },
+          "correctResponse": "Sí"
         }
       ]
     }
   ]
-}
+}   
