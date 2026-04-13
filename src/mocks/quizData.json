@@ -1,220 +1,227 @@
 {
   "testTitle": "Certificación Fullstack Semi-Senior",
-  "levels": [
-    {
-      "level": 1,
-      "topic": "JavaScript Moderno",
-      "themeColor": "#6A3F9F",
-      "locked": false,
-      "exercises": [
-        {
-          "id": "js_1",
-          "type": "multiple_choice",
-          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "scWj1BMRHUA", "category": "Fundamentals" },
-          "content": { "question": "¿Cuál es la salida de `typeof []`?", "options": ["array", "object", "undefined"] },
-          "correctResponse": "object"
-        },
-        {
-          "id": "js_2",
-          "type": "true_false",
-          "ui": { "template": "IMAGE_TOP", "mediaUrl": "js-logic.png", "category": "Variables" },
-          "content": { "question": "¿`const` permite reasignar valores?", "options": ["True", "False"] },
-          "correctResponse": "False"
-        },
-        {
-          "id": "js_3",
-          "type": "writing",
-          "ui": { "template": "TEXT_ONLY", "category": "Theory" },
-          "content": { "question": "Explica el concepto de 'Hoisting'.", "constraints": { "minWords": 20 } },
-          "correctResponse": null
-        },
-        {
-          "id": "js_4",
-          "type": "audio",
-          "ui": { "template": "AUDIO_PROMPT", "category": "Speaking" },
-          "content": { "question": "Diferencia entre == y ===" },
-          "correctResponse": null
-        },
-        {
-          "id": "js_5",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Promises" },
-          "content": { "question": "Estado inicial de una Promesa:", "options": ["Pending", "Resolved", "Rejected"] },
-          "correctResponse": "Pending"
-        }
-      ]
-    },
-    {
-      "level": 2,
-      "topic": "Node.js & Express",
-      "themeColor": "#2196F3",
-      "locked": true,
-      "exercises": [
-        {
-          "id": "node_1",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Architecture" },
-          "content": { "question": "¿Módulo para rutas de archivos?", "options": ["fs", "path", "http"] },
-          "correctResponse": "path"
-        },
-        {
-          "id": "node_2",
-          "type": "true_false",
-          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "TlB_eWDSMt4", "category": "Basics" },
-          "content": { "question": "¿Node es un Framework?", "options": ["True", "False"] },
-          "correctResponse": "False"
-        },
-        {
-          "id": "node_3",
-          "type": "writing",
-          "ui": { "template": "TEXT_ONLY", "category": "Event Loop" },
-          "content": { "question": "Describe el Event Loop.", "constraints": { "minWords": 30 } },
-          "correctResponse": null
-        },
-        {
-          "id": "node_4",
-          "type": "audio",
-          "ui": { "template": "AUDIO_PROMPT", "category": "Modules" },
-          "content": { "question": "Diferencia require e import." },
-          "correctResponse": null
-        },
-        {
-          "id": "node_5",
-          "type": "multiple_choice",
-          "ui": { "template": "IMAGE_TOP", "mediaUrl": "middleware.png", "category": "Middleware" },
-          "content": { "question": "¿Función para seguir el flujo?", "options": ["next", "done", "send"] },
-          "correctResponse": "next"
-        }
-      ]
-    },
-    {
-      "level": 3,
-      "topic": "React.js Ecosystem",
-      "themeColor": "#00D8FF",
-      "locked": true,
-      "exercises": [
-        {
-          "id": "re_1",
-          "type": "multiple_choice",
-          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "hQAHSlTtcmY", "category": "Hooks" },
-          "content": { "question": "¿Para qué sirve useMemo?", "options": ["DOM", "Memorizar", "Efectos"] },
-          "correctResponse": "Memorizar"
-        },
-        {
-          "id": "re_2",
-          "type": "true_false",
-          "ui": { "template": "TEXT_ONLY", "category": "JSX" },
-          "content": { "question": "¿Componentes en Mayúsculas?", "options": ["True", "False"] },
-          "correctResponse": "True"
-        },
-        {
-          "id": "re_3",
-          "type": "writing",
-          "ui": { "template": "IMAGE_TOP", "mediaUrl": "lifecycle.png", "category": "Logic" },
-          "content": { "question": "Explica useEffect." },
-          "correctResponse": null
-        },
-        {
-          "id": "re_4",
-          "type": "audio",
-          "ui": { "template": "AUDIO_PROMPT", "category": "State" },
-          "content": { "question": "¿Qué es Prop Drilling?" },
-          "correctResponse": null
-        },
-        {
-          "id": "re_5",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Virtual DOM" },
-          "content": { "question": "¿React usa Virtual DOM?", "options": ["Sí", "No"] },
-          "correctResponse": "Sí"
-        }
-      ]
-    },
-    {
-      "level": 4,
-      "topic": "Databases & SQL",
-      "themeColor": "#4CAF50",
-      "locked": true,
-      "exercises": [
-        {
-          "id": "db_1",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Queries" },
-          "content": { "question": "¿Comando para leer datos?", "options": ["SELECT", "GET", "READ"] },
-          "correctResponse": "SELECT"
-        },
-        {
-          "id": "db_2",
-          "type": "true_false",
-          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "W2Z766_66Fw", "category": "Modeling" },
-          "content": { "question": "¿PK puede ser NULL?", "options": ["True", "False"] },
-          "correctResponse": "False"
-        },
-        {
-          "id": "db_3",
-          "type": "writing",
-          "ui": { "template": "IMAGE_TOP", "mediaUrl": "sql-nosql.png", "category": "Theory" },
-          "content": { "question": "SQL vs NoSQL." },
-          "correctResponse": null
-        },
-        {
-          "id": "db_4",
-          "type": "audio",
-          "ui": { "template": "AUDIO_PROMPT", "category": "ACID" },
-          "content": { "question": "Define Atomicidad." },
-          "correctResponse": null
-        },
-        {
-          "id": "db_5",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Relationships" },
-          "content": { "question": "¿Qué une tablas?", "options": ["JOIN", "LINK", "CONNECT"] },
-          "correctResponse": "JOIN"
-        }
-      ]
-    },
-    {
-      "level": 5,
-      "topic": "Testing & Deploy",
-      "themeColor": "#FF5722",
-      "locked": true,
-      "exercises": [
-        {
-          "id": "t_1",
-          "type": "multiple_choice",
-          "ui": { "template": "YOUTUBE_TOP", "youtubeId": "7fXm_u7p9Fw", "category": "Jest" },
-          "content": { "question": "¿Qué es un Unit Test?", "options": ["Prueba mínima", "Prueba total"] },
-          "correctResponse": "Prueba mínima"
-        },
-        {
-          "id": "t_2",
-          "type": "true_false",
-          "ui": { "template": "TEXT_ONLY", "category": "TDD" },
-          "content": { "question": "¿Test primero?", "options": ["True", "False"] },
-          "correctResponse": "True"
-        },
-        {
-          "id": "t_3",
-          "type": "writing",
-          "ui": { "template": "IMAGE_TOP", "mediaUrl": "docker.png", "category": "DevOps" },
-          "content": { "question": "¿Qué es Docker?" },
-          "correctResponse": null
-        },
-        {
-          "id": "t_4",
-          "type": "audio",
-          "ui": { "template": "AUDIO_PROMPT", "category": "CI/CD" },
-          "content": { "question": "Define CI/CD." },
-          "correctResponse": null
-        },
-        {
-          "id": "t_5",
-          "type": "multiple_choice",
-          "ui": { "template": "TEXT_ONLY", "category": "Cloud" },
-          "content": { "question": "¿AWS es Cloud?", "options": ["Sí", "No"] },
-          "correctResponse": "Sí"
-        }
-      ]
-    }
-  ]
-}   
+  "evaluation": {
+    "current_exercise_index": 0,
+    "current_activity_index": 0,
+    "exercises": [
+      {
+        "ponderation": 20,
+        "type": "mixed-js",
+        "activities": [
+          {
+            "id": "js_1",
+            "type": "simple-selection",
+            "layout": "video-question",
+            "statement": "¿Cuál es la salida de `typeof []`?",
+            "file_content": { "type": "VIDEO", "src": "https://www.youtube.com/watch?v=scWj1BMRHUA" },
+            "activity_data": { "options": [ { "text": "array" }, { "text": "object" }, { "text": "undefined" } ] }
+          },
+          {
+            "id": "js_2",
+            "type": "true-or-false",
+            "layout": "image-question",
+            "statement": "¿`const` permite reasignar valores?",
+            "file_content": { "type": "IMAGE", "src": "js-logic.png" },
+            "activity_data": null
+          },
+          {
+            "id": "js_3",
+            "type": "writing",
+            "layout": "simple-question",
+            "statement": "Explica el concepto de 'Hoisting'.",
+            "description": "Explica el concepto. Restricción: mínimo 20 palabras.",
+            "activity_data": { "chips": [] }
+          },
+          {
+            "id": "js_4",
+            "type": "speaking",
+            "layout": "audio-question",
+            "statement": "Diferencia entre == y ===",
+            "description": "Habla claramente a la cámara o micrófono.",
+            "activity_data": null
+          },
+          {
+            "id": "js_5",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "Estado inicial de una Promesa:",
+            "activity_data": { "options": [ { "text": "Pending" }, { "text": "Resolved" }, { "text": "Rejected" } ] }
+          }
+        ]
+      },
+      {
+        "ponderation": 20,
+        "type": "node-express",
+        "activities": [
+          {
+            "id": "node_1",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "¿Módulo para rutas de archivos?",
+            "activity_data": { "options": [ { "text": "fs" }, { "text": "path" }, { "text": "http" } ] }
+          },
+          {
+            "id": "node_2",
+            "type": "true-or-false",
+            "layout": "video-question",
+            "statement": "¿Node es un Framework?",
+            "file_content": { "type": "VIDEO", "src": "https://www.youtube.com/watch?v=TlB_eWDSMt4" },
+            "activity_data": null
+          },
+          {
+            "id": "node_3",
+            "type": "writing",
+            "layout": "simple-question",
+            "statement": "Describe el Event Loop.",
+            "description": "Mínimo 30 palabras.",
+            "activity_data": { "chips": [] }
+          },
+          {
+            "id": "node_4",
+            "type": "speaking",
+            "layout": "audio-question",
+            "statement": "Diferencia require e import.",
+            "activity_data": null
+          },
+          {
+            "id": "node_5",
+            "type": "simple-selection",
+            "layout": "image-question",
+            "statement": "¿Función para seguir el flujo?",
+            "file_content": { "type": "IMAGE", "src": "middleware.png" },
+            "activity_data": { "options": [ { "text": "next" }, { "text": "done" }, { "text": "send" } ] }
+          }
+        ]
+      },
+      {
+        "ponderation": 20,
+        "type": "react-ecosystem",
+        "activities": [
+          {
+            "id": "re_1",
+            "type": "simple-selection",
+            "layout": "video-question",
+            "statement": "¿Para qué sirve useMemo?",
+            "file_content": { "type": "VIDEO", "src": "https://www.youtube.com/watch?v=hQAHSlTtcmY" },
+            "activity_data": { "options": [ { "text": "DOM" }, { "text": "Memorizar" }, { "text": "Efectos" } ] }
+          },
+          {
+            "id": "re_2",
+            "type": "true-or-false",
+            "layout": "simple-question",
+            "statement": "¿Componentes en Mayúsculas?",
+            "activity_data": null
+          },
+          {
+            "id": "re_3",
+            "type": "writing",
+            "layout": "image-question",
+            "statement": "Explica useEffect.",
+            "file_content": { "type": "IMAGE", "src": "lifecycle.png" },
+            "activity_data": { "chips": [] }
+          },
+          {
+            "id": "re_4",
+            "type": "speaking",
+            "layout": "audio-question",
+            "statement": "¿Qué es Prop Drilling?",
+            "activity_data": null
+          },
+          {
+            "id": "re_5",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "¿React usa Virtual DOM?",
+            "activity_data": { "options": [ { "text": "Sí" }, { "text": "No" } ] }
+          }
+        ]
+      },
+      {
+        "ponderation": 20,
+        "type": "databases",
+        "activities": [
+          {
+            "id": "db_1",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "¿Comando para leer datos?",
+            "activity_data": { "options": [ { "text": "SELECT" }, { "text": "GET" }, { "text": "READ" } ] }
+          },
+          {
+            "id": "db_2",
+            "type": "true-or-false",
+            "layout": "video-question",
+            "statement": "¿PK puede ser NULL?",
+            "file_content": { "type": "VIDEO", "src": "https://www.youtube.com/watch?v=W2Z766_66Fw" },
+            "activity_data": null
+          },
+          {
+            "id": "db_3",
+            "type": "writing",
+            "layout": "image-question",
+            "statement": "SQL vs NoSQL.",
+            "file_content": { "type": "IMAGE", "src": "sql-nosql.png" },
+            "activity_data": { "chips": [] }
+          },
+          {
+            "id": "db_4",
+            "type": "speaking",
+            "layout": "audio-question",
+            "statement": "Define Atomicidad.",
+            "activity_data": null
+          },
+          {
+            "id": "db_5",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "¿Qué une tablas?",
+            "activity_data": { "options": [ { "text": "JOIN" }, { "text": "LINK" }, { "text": "CONNECT" } ] }
+          }
+        ]
+      },
+      {
+        "ponderation": 20,
+        "type": "testing-deploy",
+        "activities": [
+          {
+            "id": "t_1",
+            "type": "simple-selection",
+            "layout": "video-question",
+            "statement": "¿Qué es un Unit Test?",
+            "file_content": { "type": "VIDEO", "src": "https://www.youtube.com/watch?v=7fXm_u7p9Fw" },
+            "activity_data": { "options": [ { "text": "Prueba mínima" }, { "text": "Prueba total" } ] }
+          },
+          {
+            "id": "t_2",
+            "type": "true-or-false",
+            "layout": "simple-question",
+            "statement": "¿Test primero?",
+            "activity_data": null
+          },
+          {
+            "id": "t_3",
+            "type": "writing",
+            "layout": "image-question",
+            "statement": "¿Qué es Docker?",
+            "file_content": { "type": "IMAGE", "src": "docker.png" },
+            "activity_data": { "chips": [] }
+          },
+          {
+            "id": "t_4",
+            "type": "speaking",
+            "layout": "audio-question",
+            "statement": "Define CI/CD.",
+            "activity_data": null
+          },
+          {
+            "id": "t_5",
+            "type": "simple-selection",
+            "layout": "simple-question",
+            "statement": "¿AWS es Cloud?",
+            "activity_data": { "options": [ { "text": "Sí" }, { "text": "No" } ] }
+          }
+        ]
+      }
+    ]
+  }
+}
